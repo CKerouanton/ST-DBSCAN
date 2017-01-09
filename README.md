@@ -13,7 +13,8 @@ data = spatio-temporal data <br>
 x = data longitude <br>
 y = data latitude <br>
 time = data timestamps <br>
-eps = distance minimum for longitude and latitude <br>           
+
+eps = distance minimum for longitude and latitude <br>
 eps2 =  temporal window <br> 
 minpts = number of points to consider a cluster <br> 
 cldensity = TRUE or FALSE to display the number of points reachables for every point within a cluster <br>
