@@ -5,10 +5,9 @@ stdbscan = function (traj,
                      eps, 
                      eps2, 
                      minpts, 
-                     seeds = FALSE, 
-                     cldensity = TRUE,
-                     countmode = 1:length(x)) { 
+                     cldensity = TRUE) { 
  
+  countmode = 1:length(x)
   
   data_spatial<- as.matrix(dist(cbind(y, x)))
   data_temporal<- as.matrix(dist(time))
@@ -68,6 +67,7 @@ stdbscan = function (traj,
   if (seeds && cn > 0) {
     out$isseed <- isseed
   }
+  class(out) <- "stdbscan"
   data$cluster = out$cluster
   if (cldensity > 0) {
     data$cldensity = out$density
