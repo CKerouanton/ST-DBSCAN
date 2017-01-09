@@ -68,7 +68,6 @@ stdbscan = function (traj,
   if (seeds && cn > 0) {
     out$isseed <- isseed
   }
-  class(out) <- "stdbscan"
   data$cluster = out$cluster
   if (cldensity > 0) {
     data$cldensity = out$density
