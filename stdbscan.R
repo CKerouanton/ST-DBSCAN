@@ -1,3 +1,18 @@
+########################################################################
+# ST-DBSCAN : An algorithm for clustering spatial-temporal data        #
+# (Birant and Kut, 2006)                                 #   
+# Application on a trajectory                           #
+########################################################################
+
+
+########################################################################
+# INPUTS :                                                             #
+# traj = traj gps (x, y and time)                                      #
+# eps = distance minimum for longitude and latitude                    #
+# eps2 =  distance minimum for date                                    #
+# minpts = number of points to consider a cluster                      #
+########################################################################
+
 stdbscan = function (traj, 
                      x, 
                      y, 
@@ -8,6 +23,7 @@ stdbscan = function (traj,
                      cldensity = TRUE) { 
  
   countmode = 1:length(x)
+  seeds = TRUE
   
   data_spatial<- as.matrix(dist(cbind(y, x)))
   data_temporal<- as.matrix(dist(time))
@@ -59,18 +75,15 @@ stdbscan = function (traj,
     
   }
   
-  rm(classn)
+  
   if (any(cv == (-1))) {
     cv[cv == (-1)] <- 0
   }
   out <- list(cluster = cv, eps = eps, minpts = minpts, density = classn)
+  rm(classn)
   if (seeds && cn > 0) {
     out$isseed <- isseed
   }
   class(out) <- "stdbscan"
-  data$cluster = out$cluster
-  if (cldensity > 0) {
-    data$cldensity = out$density
-  }
-  return(data)
+  return(out)
   }
