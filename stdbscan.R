@@ -13,8 +13,7 @@
 # minpts = number of points to consider a cluster                      #
 ########################################################################
 
-stdbscan = function (traj, 
-                     x, 
+stdbscan = function (x, 
                      y, 
                      time, 
                      eps, 
