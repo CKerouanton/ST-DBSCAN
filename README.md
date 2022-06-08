@@ -1,5 +1,8 @@
 # ST-DBSCAN
 
+*This repository is a fork from an ancient repository, therefore I'm not the author of this code, I've only brought very tiny modifications.*
+
+
 ### ST-DBSCAN: An algorithm for clustering spatial–temporal data
 
 Birant, D., & Kut, A. (2007). ST-DBSCAN: An algorithm for clustering spatial–temporal data. Data & Knowledge Engineering, 60(1), 208-221.
